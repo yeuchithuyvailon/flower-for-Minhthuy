@@ -1,0 +1,908 @@
+@import url(https://fonts.googleapis.com/css?family=Special+Elite);
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+html {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+q, blockquote {
+  quotes: none;
+}
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+a img {
+  border: none;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block;
+}
+
+/***********VARIABLES********/
+/***********MIXINS***********/
+/***********STYLES***********/
+.background {
+  height: 100%;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f4f4f4+0,ffffff+26,d5eae0+100 */
+  background: #f4f4f4;
+  /* Old browsers */
+  /* FF3.6+ */
+  /* Chrome,Safari4+ */
+  /* Chrome10+,Safari5.1+ */
+  /* Opera 11.10+ */
+  /* IE10+ */
+  background: linear-gradient(to bottom, #f4f4f4 0%, white 26%, #d5eae0 100%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f4f4f4', endColorstr='#d5eae0',GradientType=0 );
+  /* IE6-9 */
+}
+
+.flower-container {
+  height: 720px;
+  width: 400px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  transform-origin: 0 50%;
+  overflow: hidden;
+  border: 20px solid #FFF;
+  border-radius: 12px;
+  box-shadow: 8px 8px 8px rgba(128, 128, 128, 0.22);
+  margin-top: 20px;
+}
+
+.flower-stem {
+  height: 400px;
+  width: 176px;
+  border-left: 8px solid #105E10;
+  border-radius: 0 0 0 50%;
+  position: absolute;
+  left: 48%;
+  top: 40%;
+}
+
+.flower-leaf {
+  height: 40px;
+  width: 80px;
+  position: absolute;
+  background-color: #105E10;
+  border-radius: 0 50% / 0 100%;
+  top: 57%;
+  left: 48%;
+  transform: translateX(-90%) rotate(15deg);
+  overflow: hidden;
+}
+.flower-leaf:before {
+  content: '';
+  position: absolute;
+  width: 125%;
+  height: 100%;
+  bottom: -25%;
+  right: -8%;
+  background-color: rgba(82, 160, 90, 0.41);
+  transform: rotate(27deg);
+  border-radius: 50%;
+}
+
+.flower-text {
+  font-family: 'Special Elite', cursive;
+  text-align: center;
+  top: 85%;
+  position: relative;
+  padding: 4%;
+  background-color: #FFF;
+  font-size: 1.9em;
+}
+
+.flower-top {
+  height: 400px;
+  width: 400px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  transform-origin: 0 50%;
+  -webkit-animation: flower-rotate 10s infinite linear;
+          animation: flower-rotate 10s infinite linear;
+}
+
+.flower-center {
+  height: 80px;
+  width: 80px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  border-radius: 50%;
+  border: 2px solid #FFC15B;
+  transform: translate3D(-50%, -50%, 0);
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f1ff32+0,ffd000+100 */
+  background: #f1ff32;
+  /* Old browsers */
+  /* FF3.6+ */
+  /* Chrome,Safari4+ */
+  /* Chrome10+,Safari5.1+ */
+  /* Opera 12+ */
+  /* IE10+ */
+  background: radial-gradient(ellipse at center, #f1ff32 0%, #ffd000 100%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f1ff32', endColorstr='#ffd000',GradientType=1 );
+  /* IE6-9 fallback on horizontal gradient */
+  z-index: 2;
+  -webkit-animation: flower-center-pulse .3s infinite ease alternate;
+          animation: flower-center-pulse .3s infinite ease alternate;
+}
+
+.flower-petal {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform-origin: 50% 120%;
+  height: 160px;
+  width: 57.14286px;
+  border-radius: 90% 90% 57.14286px 57.14286px / 35% 35% 160px 160px;
+  border: 2px solid #DCEAE4;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+1,ffffff+67,d5eae0+100 */
+  background: white;
+  /* Old browsers */
+  /* FF3.6+ */
+  /* Chrome,Safari4+ */
+  /* Chrome10+,Safari5.1+ */
+  /* Opera 11.10+ */
+  /* IE10+ */
+  background: linear-gradient(to bottom, white 1%, white 67%, #d5eae0 100%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#d5eae0',GradientType=0 );
+  /* IE6-9 */
+}
+.flower-petal:after, .flower-petal:before {
+  content: '';
+  position: absolute;
+  height: 80px;
+  border: 1.33333px solid rgba(198, 217, 208, 0.44);
+  bottom: 0;
+}
+.flower-petal:before {
+  left: 36%;
+  transform: rotate(-7deg);
+}
+.flower-petal:after {
+  left: 64%;
+  transform: rotate(7deg);
+}
+
+.flower-petal:nth-child(1) {
+  transform: translate3D(-50%, -119%, 0) rotateZ(21.5deg);
+  -webkit-animation: flower-petal-movement-1 1.5s infinite ease 0.2s;
+          animation: flower-petal-movement-1 1.5s infinite ease 0.2s;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f4f4f4+0,ffffff+26,d5eae0+100 */
+  background: #f4f4f4;
+  /* Old browsers */
+  /* FF3.6+ */
+  /* Chrome,Safari4+ */
+  /* Chrome10+,Safari5.1+ */
+  /* Opera 11.10+ */
+  /* IE10+ */
+  background: linear-gradient(to bottom, #f4f4f4 0%, white 26%, #d5eae0 100%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f4f4f4', endColorstr='#d5eae0',GradientType=0 );
+  /* IE6-9 */
+}
+
+@-webkit-keyframes flower-petal-movement-1 {
+  0% {
+    transform: translate3D(-50%, -120%, 0) rotateZ(21.5deg);
+    transform-origin: 50% 120%;
+  }
+  50% {
+    transform: translate3D(-50%, -105%, 0) rotateZ(21.5deg);
+    transform-origin: 50% 105%;
+  }
+  100% {
+    transform: translate3D(-50%, -120%, 0) rotateZ(21.5deg);
+    transform-origin: 50% 120%;
+  }
+}
+
+@keyframes flower-petal-movement-1 {
+  0% {
+    transform: translate3D(-50%, -120%, 0) rotateZ(21.5deg);
+    transform-origin: 50% 120%;
+  }
+  50% {
+    transform: translate3D(-50%, -105%, 0) rotateZ(21.5deg);
+    transform-origin: 50% 105%;
+  }
+  100% {
+    transform: translate3D(-50%, -120%, 0) rotateZ(21.5deg);
+    transform-origin: 50% 120%;
+  }
+}
+.flower-petal:nth-child(2) {
+  transform: translate3D(-50%, -111%, 0) rotateZ(44deg);
+  -webkit-animation: flower-petal-movement-2 1.5s infinite ease 0.2s;
+          animation: flower-petal-movement-2 1.5s infinite ease 0.2s;
+  z-index: 1;
+}
+
+@-webkit-keyframes flower-petal-movement-2 {
+  0% {
+    transform: translate3D(-50%, -120%, 0) rotateZ(44deg);
+    transform-origin: 50% 120%;
+  }
+  50% {
+    transform: translate3D(-50%, -105%, 0) rotateZ(44deg);
+    transform-origin: 50% 105%;
+  }
+  100% {
+    transform: translate3D(-50%, -120%, 0) rotateZ(44deg);
+    transform-origin: 50% 120%;
+  }
+}
+
+@keyframes flower-petal-movement-2 {
+  0% {
+    transform: translate3D(-50%, -120%, 0) rotateZ(44deg);
+    transform-origin: 50% 120%;
+  }
+  50% {
+    transform: translate3D(-50%, -105%, 0) rotateZ(44deg);
+    transform-origin: 50% 105%;
+  }
+  100% {
+    transform: translate3D(-50%, -120%, 0) rotateZ(44deg);
+    transform-origin: 50% 120%;
+  }
+}
+.flower-petal:nth-child(3) {
+  transform: translate3D(-50%, -111%, 0) rotateZ(66.5deg);
+  -webkit-animation: flower-petal-movement-3 1.5s infinite ease 0.5s;
+          animation: flower-petal-movement-3 1.5s infinite ease 0.5s;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f4f4f4+0,ffffff+26,d5eae0+100 */
+  background: #f4f4f4;
+  /* Old browsers */
+  /* FF3.6+ */
+  /* Chrome,Safari4+ */
+  /* Chrome10+,Safari5.1+ */
+  /* Opera 11.10+ */
+  /* IE10+ */
+  background: linear-gradient(to bottom, #f4f4f4 0%, white 26%, #d5eae0 100%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f4f4f4', endColorstr='#d5eae0',GradientType=0 );
+  /* IE6-9 */
+}
+
+@-webkit-keyframes flower-petal-movement-3 {
+  0% {
+    transform: translate3D(-50%, -120%, 0) rotateZ(66.5deg);
+    transform-origin: 50% 120%;
+  }
+  50% {
+    transform: translate3D(-50%, -105%, 0) rotateZ(66.5deg);
+    transform-origin: 50% 105%;
+  }
+  100% {
+    transform: translate3D(-50%, -120%, 0) rotateZ(66.5deg);
+    transform-origin: 50% 120%;
+  }
+}
+
+@keyframes flower-petal-movement-3 {
+  0% {
+    transform: translate3D(-50%, -120%, 0) rotateZ(66.5deg);
+    transform-origin: 50% 120%;
+  }
+  50% {
+    transform: translate3D(-50%, -105%, 0) rotateZ(66.5deg);
+    transform-origin: 50% 105%;
+  }
+  100% {
+    transform: translate3D(-50%, -120%, 0) rotateZ(66.5deg);
+    transform-origin: 50% 120%;
+  }
+}
+.flower-petal:nth-child(4) {
+  transform: translate3D(-50%, -118%, 0) rotateZ(89deg);
+  -webkit-animation: flower-petal-movement-4 1.5s infinite ease 0.3s;
+          animation: flower-petal-movement-4 1.5s infinite ease 0.3s;
+  z-index: 1;
+}
+
+@-webkit-keyframes flower-petal-movement-4 {
+  0% {
+    transform: translate3D(-50%, -120%, 0) rotateZ(89deg);
+    transform-origin: 50% 120%;
+  }
+  50% {
+    transform: translate3D(-50%, -105%, 0) rotateZ(89deg);
+    transform-origin: 50% 105%;
+  }
+  100% {
+    transform: translate3D(-50%, -120%, 0) rotateZ(89deg);
+    transform-origin: 50% 120%;
+  }
+}
+
+@keyframes flower-petal-movement-4 {
+  0% {
+    transform: translate3D(-50%, -120%, 0) rotateZ(89deg);
+    transform-origin: 50% 120%;
+  }
+  50% {
+    transform: translate3D(-50%, -105%, 0) rotateZ(89deg);
+    transform-origin: 50% 105%;
+  }
+  100% {
+    transform: translate3D(-50%, -120%, 0) rotateZ(89deg);
+    transform-origin: 50% 120%;
+  }
+}
+.flower-petal:nth-child(5) {
+  transform: translate3D(-50%, -112%, 0) rotateZ(111.5deg);
+  -webkit-animation: flower-petal-movement-5 1.5s infinite ease 0.3s;
+          animation: flower-petal-movement-5 1.5s infinite ease 0.3s;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f4f4f4+0,ffffff+26,d5eae0+100 */
+  background: #f4f4f4;
+  /* Old browsers */
+  /* FF3.6+ */
+  /* Chrome,Safari4+ */
+  /* Chrome10+,Safari5.1+ */
+  /* Opera 11.10+ */
+  /* IE10+ */
+  background: linear-gradient(to bottom, #f4f4f4 0%, white 26%, #d5eae0 100%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f4f4f4', endColorstr='#d5eae0',GradientType=0 );
+  /* IE6-9 */
+}
+
+@-webkit-keyframes flower-petal-movement-5 {
+  0% {
+    transform: translate3D(-50%, -120%, 0) rotateZ(111.5deg);
+    transform-origin: 50% 120%;
+  }
+  50% {
+    transform: translate3D(-50%, -105%, 0) rotateZ(111.5deg);
+    transform-origin: 50% 105%;
+  }
+  100% {
+    transform: translate3D(-50%, -120%, 0) rotateZ(111.5deg);
+    transform-origin: 50% 120%;
+  }
+}
+
+@keyframes flower-petal-movement-5 {
+  0% {
+    transform: translate3D(-50%, -120%, 0) rotateZ(111.5deg);
+    transform-origin: 50% 120%;
+  }
+  50% {
+    transform: translate3D(-50%, -105%, 0) rotateZ(111.5deg);
+    transform-origin: 50% 105%;
+  }
+  100% {
+    transform: translate3D(-50%, -120%, 0) rotateZ(111.5deg);
+    transform-origin: 50% 120%;
+  }
+}
+.flower-petal:nth-child(6) {
+  transform: translate3D(-50%, -114%, 0) rotateZ(134deg);
+  -webkit-animation: flower-petal-movement-6 1.5s infinite ease 0.3s;
+          animation: flower-petal-movement-6 1.5s infinite ease 0.3s;
+  z-index: 1;
+}
+
+@-webkit-keyframes flower-petal-movement-6 {
+  0% {
+    transform: translate3D(-50%, -120%, 0) rotateZ(134deg);
+    transform-origin: 50% 120%;
+  }
+  50% {
+    transform: translate3D(-50%, -105%, 0) rotateZ(134deg);
+    transform-origin: 50% 105%;
+  }
+  100% {
+    transform: translate3D(-50%, -120%, 0) rotateZ(134deg);
+    transform-origin: 50% 120%;
+  }
+}
+
+@keyframes flower-petal-movement-6 {
+  0% {
+    transform: translate3D(-50%, -120%, 0) rotateZ(134deg);
+    transform-origin: 50% 120%;
+  }
+  50% {
+    transform: translate3D(-50%, -105%, 0) rotateZ(134deg);
+    transform-origin: 50% 105%;
+  }
+  100% {
+    transform: translate3D(-50%, -120%, 0) rotateZ(134deg);
+    transform-origin: 50% 120%;
+  }
+}
+.flower-petal:nth-child(7) {
+  transform: translate3D(-50%, -111%, 0) rotateZ(156.5deg);
+  -webkit-animation: flower-petal-movement-7 1.5s infinite ease 0.2s;
+          animation: flower-petal-movement-7 1.5s infinite ease 0.2s;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f4f4f4+0,ffffff+26,d5eae0+100 */
+  background: #f4f4f4;
+  /* Old browsers */
+  /* FF3.6+ */
+  /* Chrome,Safari4+ */
+  /* Chrome10+,Safari5.1+ */
+  /* Opera 11.10+ */
+  /* IE10+ */
+  background: linear-gradient(to bottom, #f4f4f4 0%, white 26%, #d5eae0 100%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f4f4f4', endColorstr='#d5eae0',GradientType=0 );
+  /* IE6-9 */
+}
+
+@-webkit-keyframes flower-petal-movement-7 {
+  0% {
+    transform: translate3D(-50%, -120%, 0) rotateZ(156.5deg);
+    transform-origin: 50% 120%;
+  }
+  50% {
+    transform: translate3D(-50%, -105%, 0) rotateZ(156.5deg);
+    transform-origin: 50% 105%;
+  }
+  100% {
+    transform: translate3D(-50%, -120%, 0) rotateZ(156.5deg);
+    transform-origin: 50% 120%;
+  }
+}
+
+@keyframes flower-petal-movement-7 {
+  0% {
+    transform: translate3D(-50%, -120%, 0) rotateZ(156.5deg);
+    transform-origin: 50% 120%;
+  }
+  50% {
+    transform: translate3D(-50%, -105%, 0) rotateZ(156.5deg);
+    transform-origin: 50% 105%;
+  }
+  100% {
+    transform: translate3D(-50%, -120%, 0) rotateZ(156.5deg);
+    transform-origin: 50% 120%;
+  }
+}
+.flower-petal:nth-child(8) {
+  transform: translate3D(-50%, -118%, 0) rotateZ(179deg);
+  -webkit-animation: flower-petal-movement-8 1.5s infinite ease 0.5s;
+          animation: flower-petal-movement-8 1.5s infinite ease 0.5s;
+  z-index: 1;
+}
+
+@-webkit-keyframes flower-petal-movement-8 {
+  0% {
+    transform: translate3D(-50%, -120%, 0) rotateZ(179deg);
+    transform-origin: 50% 120%;
+  }
+  50% {
+    transform: translate3D(-50%, -105%, 0) rotateZ(179deg);
+    transform-origin: 50% 105%;
+  }
+  100% {
+    transform: translate3D(-50%, -120%, 0) rotateZ(179deg);
+    transform-origin: 50% 120%;
+  }
+}
+
+@keyframes flower-petal-movement-8 {
+  0% {
+    transform: translate3D(-50%, -120%, 0) rotateZ(179deg);
+    transform-origin: 50% 120%;
+  }
+  50% {
+    transform: translate3D(-50%, -105%, 0) rotateZ(179deg);
+    transform-origin: 50% 105%;
+  }
+  100% {
+    transform: translate3D(-50%, -120%, 0) rotateZ(179deg);
+    transform-origin: 50% 120%;
+  }
+}
+.flower-petal:nth-child(9) {
+  transform: translate3D(-50%, -118%, 0) rotateZ(201.5deg);
+  -webkit-animation: flower-petal-movement-9 1.5s infinite ease 0.1s;
+          animation: flower-petal-movement-9 1.5s infinite ease 0.1s;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f4f4f4+0,ffffff+26,d5eae0+100 */
+  background: #f4f4f4;
+  /* Old browsers */
+  /* FF3.6+ */
+  /* Chrome,Safari4+ */
+  /* Chrome10+,Safari5.1+ */
+  /* Opera 11.10+ */
+  /* IE10+ */
+  background: linear-gradient(to bottom, #f4f4f4 0%, white 26%, #d5eae0 100%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f4f4f4', endColorstr='#d5eae0',GradientType=0 );
+  /* IE6-9 */
+}
+
+@-webkit-keyframes flower-petal-movement-9 {
+  0% {
+    transform: translate3D(-50%, -120%, 0) rotateZ(201.5deg);
+    transform-origin: 50% 120%;
+  }
+  50% {
+    transform: translate3D(-50%, -105%, 0) rotateZ(201.5deg);
+    transform-origin: 50% 105%;
+  }
+  100% {
+    transform: translate3D(-50%, -120%, 0) rotateZ(201.5deg);
+    transform-origin: 50% 120%;
+  }
+}
+
+@keyframes flower-petal-movement-9 {
+  0% {
+    transform: translate3D(-50%, -120%, 0) rotateZ(201.5deg);
+    transform-origin: 50% 120%;
+  }
+  50% {
+    transform: translate3D(-50%, -105%, 0) rotateZ(201.5deg);
+    transform-origin: 50% 105%;
+  }
+  100% {
+    transform: translate3D(-50%, -120%, 0) rotateZ(201.5deg);
+    transform-origin: 50% 120%;
+  }
+}
+.flower-petal:nth-child(10) {
+  transform: translate3D(-50%, -110%, 0) rotateZ(224deg);
+  -webkit-animation: flower-petal-movement-10 1.5s infinite ease 0.1s;
+          animation: flower-petal-movement-10 1.5s infinite ease 0.1s;
+  z-index: 1;
+}
+
+@-webkit-keyframes flower-petal-movement-10 {
+  0% {
+    transform: translate3D(-50%, -120%, 0) rotateZ(224deg);
+    transform-origin: 50% 120%;
+  }
+  50% {
+    transform: translate3D(-50%, -105%, 0) rotateZ(224deg);
+    transform-origin: 50% 105%;
+  }
+  100% {
+    transform: translate3D(-50%, -120%, 0) rotateZ(224deg);
+    transform-origin: 50% 120%;
+  }
+}
+
+@keyframes flower-petal-movement-10 {
+  0% {
+    transform: translate3D(-50%, -120%, 0) rotateZ(224deg);
+    transform-origin: 50% 120%;
+  }
+  50% {
+    transform: translate3D(-50%, -105%, 0) rotateZ(224deg);
+    transform-origin: 50% 105%;
+  }
+  100% {
+    transform: translate3D(-50%, -120%, 0) rotateZ(224deg);
+    transform-origin: 50% 120%;
+  }
+}
+.flower-petal:nth-child(11) {
+  transform: translate3D(-50%, -116%, 0) rotateZ(246.5deg);
+  -webkit-animation: flower-petal-movement-11 1.5s infinite ease 0.1s;
+          animation: flower-petal-movement-11 1.5s infinite ease 0.1s;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f4f4f4+0,ffffff+26,d5eae0+100 */
+  background: #f4f4f4;
+  /* Old browsers */
+  /* FF3.6+ */
+  /* Chrome,Safari4+ */
+  /* Chrome10+,Safari5.1+ */
+  /* Opera 11.10+ */
+  /* IE10+ */
+  background: linear-gradient(to bottom, #f4f4f4 0%, white 26%, #d5eae0 100%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f4f4f4', endColorstr='#d5eae0',GradientType=0 );
+  /* IE6-9 */
+}
+
+@-webkit-keyframes flower-petal-movement-11 {
+  0% {
+    transform: translate3D(-50%, -120%, 0) rotateZ(246.5deg);
+    transform-origin: 50% 120%;
+  }
+  50% {
+    transform: translate3D(-50%, -105%, 0) rotateZ(246.5deg);
+    transform-origin: 50% 105%;
+  }
+  100% {
+    transform: translate3D(-50%, -120%, 0) rotateZ(246.5deg);
+    transform-origin: 50% 120%;
+  }
+}
+
+@keyframes flower-petal-movement-11 {
+  0% {
+    transform: translate3D(-50%, -120%, 0) rotateZ(246.5deg);
+    transform-origin: 50% 120%;
+  }
+  50% {
+    transform: translate3D(-50%, -105%, 0) rotateZ(246.5deg);
+    transform-origin: 50% 105%;
+  }
+  100% {
+    transform: translate3D(-50%, -120%, 0) rotateZ(246.5deg);
+    transform-origin: 50% 120%;
+  }
+}
+.flower-petal:nth-child(12) {
+  transform: translate3D(-50%, -116%, 0) rotateZ(269deg);
+  -webkit-animation: flower-petal-movement-12 1.5s infinite ease 0.3s;
+          animation: flower-petal-movement-12 1.5s infinite ease 0.3s;
+  z-index: 1;
+}
+
+@-webkit-keyframes flower-petal-movement-12 {
+  0% {
+    transform: translate3D(-50%, -120%, 0) rotateZ(269deg);
+    transform-origin: 50% 120%;
+  }
+  50% {
+    transform: translate3D(-50%, -105%, 0) rotateZ(269deg);
+    transform-origin: 50% 105%;
+  }
+  100% {
+    transform: translate3D(-50%, -120%, 0) rotateZ(269deg);
+    transform-origin: 50% 120%;
+  }
+}
+
+@keyframes flower-petal-movement-12 {
+  0% {
+    transform: translate3D(-50%, -120%, 0) rotateZ(269deg);
+    transform-origin: 50% 120%;
+  }
+  50% {
+    transform: translate3D(-50%, -105%, 0) rotateZ(269deg);
+    transform-origin: 50% 105%;
+  }
+  100% {
+    transform: translate3D(-50%, -120%, 0) rotateZ(269deg);
+    transform-origin: 50% 120%;
+  }
+}
+.flower-petal:nth-child(13) {
+  transform: translate3D(-50%, -113%, 0) rotateZ(291.5deg);
+  -webkit-animation: flower-petal-movement-13 1.5s infinite ease 0.3s;
+          animation: flower-petal-movement-13 1.5s infinite ease 0.3s;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f4f4f4+0,ffffff+26,d5eae0+100 */
+  background: #f4f4f4;
+  /* Old browsers */
+  /* FF3.6+ */
+  /* Chrome,Safari4+ */
+  /* Chrome10+,Safari5.1+ */
+  /* Opera 11.10+ */
+  /* IE10+ */
+  background: linear-gradient(to bottom, #f4f4f4 0%, white 26%, #d5eae0 100%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f4f4f4', endColorstr='#d5eae0',GradientType=0 );
+  /* IE6-9 */
+}
+
+@-webkit-keyframes flower-petal-movement-13 {
+  0% {
+    transform: translate3D(-50%, -120%, 0) rotateZ(291.5deg);
+    transform-origin: 50% 120%;
+  }
+  50% {
+    transform: translate3D(-50%, -105%, 0) rotateZ(291.5deg);
+    transform-origin: 50% 105%;
+  }
+  100% {
+    transform: translate3D(-50%, -120%, 0) rotateZ(291.5deg);
+    transform-origin: 50% 120%;
+  }
+}
+
+@keyframes flower-petal-movement-13 {
+  0% {
+    transform: translate3D(-50%, -120%, 0) rotateZ(291.5deg);
+    transform-origin: 50% 120%;
+  }
+  50% {
+    transform: translate3D(-50%, -105%, 0) rotateZ(291.5deg);
+    transform-origin: 50% 105%;
+  }
+  100% {
+    transform: translate3D(-50%, -120%, 0) rotateZ(291.5deg);
+    transform-origin: 50% 120%;
+  }
+}
+.flower-petal:nth-child(14) {
+  transform: translate3D(-50%, -118%, 0) rotateZ(314deg);
+  -webkit-animation: flower-petal-movement-14 1.5s infinite ease 0.4s;
+          animation: flower-petal-movement-14 1.5s infinite ease 0.4s;
+  z-index: 1;
+}
+
+@-webkit-keyframes flower-petal-movement-14 {
+  0% {
+    transform: translate3D(-50%, -120%, 0) rotateZ(314deg);
+    transform-origin: 50% 120%;
+  }
+  50% {
+    transform: translate3D(-50%, -105%, 0) rotateZ(314deg);
+    transform-origin: 50% 105%;
+  }
+  100% {
+    transform: translate3D(-50%, -120%, 0) rotateZ(314deg);
+    transform-origin: 50% 120%;
+  }
+}
+
+@keyframes flower-petal-movement-14 {
+  0% {
+    transform: translate3D(-50%, -120%, 0) rotateZ(314deg);
+    transform-origin: 50% 120%;
+  }
+  50% {
+    transform: translate3D(-50%, -105%, 0) rotateZ(314deg);
+    transform-origin: 50% 105%;
+  }
+  100% {
+    transform: translate3D(-50%, -120%, 0) rotateZ(314deg);
+    transform-origin: 50% 120%;
+  }
+}
+.flower-petal:nth-child(15) {
+  transform: translate3D(-50%, -113%, 0) rotateZ(336.5deg);
+  -webkit-animation: flower-petal-movement-15 1.5s infinite ease 0.5s;
+          animation: flower-petal-movement-15 1.5s infinite ease 0.5s;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f4f4f4+0,ffffff+26,d5eae0+100 */
+  background: #f4f4f4;
+  /* Old browsers */
+  /* FF3.6+ */
+  /* Chrome,Safari4+ */
+  /* Chrome10+,Safari5.1+ */
+  /* Opera 11.10+ */
+  /* IE10+ */
+  background: linear-gradient(to bottom, #f4f4f4 0%, white 26%, #d5eae0 100%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f4f4f4', endColorstr='#d5eae0',GradientType=0 );
+  /* IE6-9 */
+}
+
+@-webkit-keyframes flower-petal-movement-15 {
+  0% {
+    transform: translate3D(-50%, -120%, 0) rotateZ(336.5deg);
+    transform-origin: 50% 120%;
+  }
+  50% {
+    transform: translate3D(-50%, -105%, 0) rotateZ(336.5deg);
+    transform-origin: 50% 105%;
+  }
+  100% {
+    transform: translate3D(-50%, -120%, 0) rotateZ(336.5deg);
+    transform-origin: 50% 120%;
+  }
+}
+
+@keyframes flower-petal-movement-15 {
+  0% {
+    transform: translate3D(-50%, -120%, 0) rotateZ(336.5deg);
+    transform-origin: 50% 120%;
+  }
+  50% {
+    transform: translate3D(-50%, -105%, 0) rotateZ(336.5deg);
+    transform-origin: 50% 105%;
+  }
+  100% {
+    transform: translate3D(-50%, -120%, 0) rotateZ(336.5deg);
+    transform-origin: 50% 120%;
+  }
+}
+.flower-petal:nth-child(16) {
+  transform: translate3D(-50%, -118%, 0) rotateZ(359deg);
+  -webkit-animation: flower-petal-movement-16 1.5s infinite ease 0.2s;
+          animation: flower-petal-movement-16 1.5s infinite ease 0.2s;
+  z-index: 1;
+}
+
+@-webkit-keyframes flower-petal-movement-16 {
+  0% {
+    transform: translate3D(-50%, -120%, 0) rotateZ(359deg);
+    transform-origin: 50% 120%;
+  }
+  50% {
+    transform: translate3D(-50%, -105%, 0) rotateZ(359deg);
+    transform-origin: 50% 105%;
+  }
+  100% {
+    transform: translate3D(-50%, -120%, 0) rotateZ(359deg);
+    transform-origin: 50% 120%;
+  }
+}
+
+@keyframes flower-petal-movement-16 {
+  0% {
+    transform: translate3D(-50%, -120%, 0) rotateZ(359deg);
+    transform-origin: 50% 120%;
+  }
+  50% {
+    transform: translate3D(-50%, -105%, 0) rotateZ(359deg);
+    transform-origin: 50% 105%;
+  }
+  100% {
+    transform: translate3D(-50%, -120%, 0) rotateZ(359deg);
+    transform-origin: 50% 120%;
+  }
+}
+@-webkit-keyframes flower-rotate {
+  from {
+    transform: rotate(0deg) translateX(-50%);
+  }
+  to {
+    transform: rotate(359deg) translateX(-50%);
+  }
+}
+@keyframes flower-rotate {
+  from {
+    transform: rotate(0deg) translateX(-50%);
+  }
+  to {
+    transform: rotate(359deg) translateX(-50%);
+  }
+}
+@-webkit-keyframes flower-center-pulse {
+  from {
+    height: 80px;
+    width: 80px;
+  }
+  to {
+    height: 85.10638px;
+    width: 85.10638px;
+  }
+}
+@keyframes flower-center-pulse {
+  from {
+    height: 80px;
+    width: 80px;
+  }
+  to {
+    height: 85.10638px;
+    width: 85.10638px;
+  }
+}
